@@ -1,11 +1,11 @@
 package br.com.caelum.vraptor.taglib;
 
-import java.util.Collection;
+import java.util.List;
 
 import javax.servlet.jsp.JspTagException;
 import javax.servlet.jsp.jstl.core.ConditionalTagSupport;
 
-import com.google.common.collect.Multimap;
+import br.com.caelum.vraptor.validator.Message;
 
 public class HasErrorsTag extends ConditionalTagSupport {
 
@@ -25,17 +25,22 @@ public class HasErrorsTag extends ConditionalTagSupport {
 	@SuppressWarnings("unchecked")
 	protected boolean condition() throws JspTagException {
 
-		Multimap<String, String> errorsMap = (Multimap<String, String>) pageContext.getRequest().getAttribute("errorsMap");
+		List<Message> errors = (List<Message>) pageContext.getRequest().getAttribute("errors");
 
-		if (errorsMap != null) {
+		if (errors != null) {
 
-			Collection<String> errors = errorsMap.get(category);
+			for (Message message : errors) {
 
-			return errors != null && errors.size() > 0;
+				if (message.getCategory().equals(this.getCategory())) {
+					return true;
+				}
+
+			}
 
 		}
 
 		return false;
+
 	}
 
 }

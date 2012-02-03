@@ -4,12 +4,12 @@
 package br.com.caelum.vraptor.taglib;
 
 import java.io.IOException;
-import java.util.Collection;
+import java.util.List;
 
 import javax.servlet.jsp.JspException;
 import javax.servlet.jsp.tagext.TagSupport;
 
-import com.google.common.collect.Multimap;
+import br.com.caelum.vraptor.validator.Message;
 
 /**
  * @author Dennys Fredericci
@@ -33,27 +33,25 @@ public class ShowErrorsTag extends TagSupport {
 	@SuppressWarnings("unchecked")
 	public int doEndTag() throws JspException {
 
-		Multimap<String, String> errorsMap = (Multimap<String, String>) pageContext.getRequest().getAttribute("errorsMap");
+		List<Message> errors = (List<Message>) pageContext.getRequest().getAttribute("errors");
 
-		if (errorsMap != null) {
+		if (errors != null) {
 
-			Collection<String> errors = errorsMap.get(category);
+			for (Message message : errors) {
 
-			if (errors != null) {
-
-				for (String erro : errors) {
-					print(erro);
+				if (message.getCategory().equals(this.getCategory())) {
+					print(message);
 				}
+				
 			}
-
 		}
 
 		return EVAL_PAGE;
 	}
 
-	private void print(String erro) throws JspException {
+	private void print(Message message) throws JspException {
 		try {
-			pageContext.getOut().print(erro + "<br>");
+			pageContext.getOut().print(message.getMessage() + "<br>");
 		} catch (IOException e) {
 			throw new JspException(e);
 		}
