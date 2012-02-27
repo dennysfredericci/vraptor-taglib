@@ -1,6 +1,6 @@
 package br.com.caelum.vraptor.taglib;
 
-import java.util.List;
+import java.util.Collection;
 
 import javax.servlet.jsp.JspTagException;
 import javax.servlet.jsp.jstl.core.ConditionalTagSupport;
@@ -11,7 +11,7 @@ public class HasErrorsTag extends ConditionalTagSupport {
 
 	private static final long serialVersionUID = 1L;
 
-	private String category = null;
+	private String category;
 
 	public String getCategory() {
 		return category;
@@ -21,26 +21,20 @@ public class HasErrorsTag extends ConditionalTagSupport {
 		this.category = category;
 	}
 
-	@Override
-	@SuppressWarnings("unchecked")
 	protected boolean condition() throws JspTagException {
 
-		List<Message> errors = (List<Message>) pageContext.getRequest().getAttribute("errors");
+		@SuppressWarnings("unchecked")
+		Collection<Message> errors = (Collection<Message>) pageContext.getRequest().getAttribute("errors");
 
 		if (errors != null) {
-
 			for (Message message : errors) {
-
 				if (message.getCategory().equals(this.getCategory())) {
 					return true;
 				}
-
 			}
-
 		}
 
 		return false;
-
 	}
 
 }
