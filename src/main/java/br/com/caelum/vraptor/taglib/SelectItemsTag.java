@@ -5,13 +5,10 @@ import br.com.caelum.vraptor.taglib.elements.OptionElement;
 import br.com.caelum.vraptor.taglib.elements.SelectItemsElement;
 import br.com.caelum.vraptor.taglib.elements.atribute.IdElement;
 import br.com.caelum.vraptor.taglib.elements.atribute.NameElement;
-import br.com.caelum.vraptor.taglib.util.BeanUtil;
-import java.io.IOException;
 import java.util.List;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.servlet.jsp.JspException;
 import javax.servlet.jsp.tagext.TagSupport;
+import org.apache.commons.beanutils.PropertyUtils;
 
 /**
  * @author Robson Ventrua Rodrigues robsonvnt@gmail.com Date: 09/10/12
@@ -72,8 +69,8 @@ public class SelectItemsTag extends TagSupport {
             
             for (Object object : list) {
                 
-                String valueOption = BeanUtil.getAtributeValue(object, value).toString();
-                String labelOption = BeanUtil.getAtributeValue(object, label).toString();
+                String valueOption = PropertyUtils.getProperty(object, value).toString();
+                String labelOption = PropertyUtils.getProperty(object, label).toString();
                 optionElement = new OptionElement(optionElement, valueOption, labelOption);
             }
             
