@@ -39,6 +39,17 @@
             <name>name</name>
             <required>true</required>
         </attribute>
+        <attribute>
+            <name>styleClass</name>
+        </attribute>
+        <attribute>
+            <name>value</name>
+            <required>true</required>
+        </attribute>
+        <attribute>
+            <name>label</name>
+            <required>true</required>
+        </attribute>
     </tag>
     
     

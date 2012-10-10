@@ -5,6 +5,7 @@ import br.com.caelum.vraptor.taglib.elements.OptionElement;
 import br.com.caelum.vraptor.taglib.elements.SelectItemsElement;
 import br.com.caelum.vraptor.taglib.elements.atribute.IdElement;
 import br.com.caelum.vraptor.taglib.elements.atribute.NameElement;
+import br.com.caelum.vraptor.taglib.util.BeanUtil;
 import java.io.IOException;
 import java.util.List;
 import java.util.logging.Level;
@@ -19,6 +20,9 @@ public class SelectItemsTag extends TagSupport {
 
     private String name;
     private List list;
+    private String styleClass;
+    private String value;
+    private String label;
 
     public List getList() {
         return list;
@@ -36,6 +40,30 @@ public class SelectItemsTag extends TagSupport {
         this.name = name;
     }
 
+    public String getStyleClass() {
+        return styleClass;
+    }
+
+    public void setStyleClass(String styleClass) {
+        this.styleClass = styleClass;
+    }
+
+    public String getLabel() {
+        return label;
+    }
+
+    public void setLabel(String label) {
+        this.label = label;
+    }
+
+    public String getValue() {
+        return value;
+    }
+
+    public void setValue(String value) {
+        this.value = value;
+    }
+
     @Override
     public int doStartTag() throws JspException {
         try {
@@ -43,7 +71,10 @@ public class SelectItemsTag extends TagSupport {
             OptionElement optionElement = null;
             
             for (Object object : list) {
-                optionElement = new OptionElement(optionElement, object.toString(), object.toString());
+                
+                String valueOption = BeanUtil.getAtributeValue(object, value).toString();
+                String labelOption = BeanUtil.getAtributeValue(object, label).toString();
+                optionElement = new OptionElement(optionElement, valueOption, labelOption);
             }
             
             Element element = new NameElement(null, name);
@@ -54,8 +85,9 @@ public class SelectItemsTag extends TagSupport {
             pageContext.getOut().print(element.getElement());
             return super.doStartTag();
             
-        } catch (IOException ex) {
+        } catch (Exception ex) {
             return super.doStartTag();
         }
     }
+    
 }
