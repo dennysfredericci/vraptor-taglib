@@ -8,12 +8,12 @@ import br.com.caelum.vraptor.taglib.elements.Element;
 
 /**
  *
- * @author Robson Ventura Rodrigues robsonvnt@gmail.com
+ * @author Robson Ventura Rodrigues
  */
-public class ValueElement extends AttributeElement{
+public class StyleElement extends AttributeElement{
 
-    public ValueElement(Element parentElements, String value) {
-        super(parentElements, "value", "=", value);
+    public StyleElement(Element parentElements, String value) {
+        super(parentElements, "style", "=", value);
     }
     
 }

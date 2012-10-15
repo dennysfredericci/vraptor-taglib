@@ -10,10 +10,10 @@ import br.com.caelum.vraptor.taglib.elements.Element;
  *
  * @author Robson Ventura Rodrigues robsonvnt@gmail.com
  */
-public class IdElement extends AttributeElements{
+public class IdElement extends AttributeElement{
     
     public IdElement(Element parentElements, String value) {
-        super(parentElements, "name", "=", value);
+        super(parentElements, "id", "=", value);
     }
     
 }

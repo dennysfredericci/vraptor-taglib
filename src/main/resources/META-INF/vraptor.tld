@@ -37,7 +37,7 @@
         </attribute>
         <attribute>
             <name>name</name>
-            <required>true</required>
+            <required>false</required>
         </attribute>
         <attribute>
             <name>styleClass</name>
@@ -49,6 +49,14 @@
         <attribute>
             <name>label</name>
             <required>true</required>
+        </attribute>
+        <attribute>
+            <name>style</name>
+            <required>false</required>
+        </attribute>
+        <attribute>
+            <name>id</name>
+            <required>false</required>
         </attribute>
     </tag>
     

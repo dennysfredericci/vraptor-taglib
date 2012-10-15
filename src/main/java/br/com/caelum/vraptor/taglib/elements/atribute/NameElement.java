@@ -10,7 +10,7 @@ import br.com.caelum.vraptor.taglib.elements.Element;
  *
  * @author Robson Ventura Rodrigues robsonvnt@gmail.com
  */
-public class NameElement extends AttributeElements{
+public class NameElement extends AttributeElement{
 
     public NameElement(Element parentElements, String value) {
         super(parentElements, "name", "=", value);

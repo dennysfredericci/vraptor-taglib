@@ -10,7 +10,7 @@ import br.com.caelum.vraptor.taglib.elements.Element;
  *
  * @author Robson Ventura Rodrigues robsonvnt@gmail.com
  */
-public class StyleClassElement  extends AttributeElements{
+public class StyleClassElement  extends AttributeElement{
 
     public StyleClassElement(Element parentElements, String value) {
         super(parentElements, "class", "=", value);
