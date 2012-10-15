@@ -12,7 +12,7 @@ Declare:
 	* Attributes:
 		* list: Collection which contains the field's items. The field MUST a EL expression.
 		* name: Defines a name for the <select> element.
-                * id: Defines an id for the <select> element.
+		* id: Defines an id for the <select> element.
 		* styleClass: Specifies one or more classnames for the <select> element.
 		* style: Specifies an inline CSS style for the <select> element.
 		* value: Specifies the value of <option> elements to be sent to a server. This value MUST be the atribute name of the list element.
