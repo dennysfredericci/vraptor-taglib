@@ -7,14 +7,16 @@ Declare:
 * SelectItems 
 
 	* Definition and Usage:
-		The <vraptor:selectItems> is used to create a drop-down list of HTML.
+		The <vraptor:selectItems> is used to create a HTML <select> Tag which is a drop-down list.
 	
 	* Attributes:
 		* list: Collection which contains the field's items. The field MUST a EL expression.
-		* name: Defines a name for the drop-down list of HTML.
-		* styleClass: Specifies one or more classnames for a HTML element.
+		* name: Defines a name for the <select> element.
+                * id: Defines an id for the <select> element.
+		* styleClass: Specifies one or more classnames for the <select> element.
+                * style: Specifies an inline CSS style for the <select> element.
 		* value: Specifies the value of <option> elements to be sent to a server.
-		* label: Specifies a shorter label for an option.
+		* label: Specifies a shorter label for the <option> elements.
 
 
 * Validators support
