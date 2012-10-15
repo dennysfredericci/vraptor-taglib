@@ -1,5 +1,17 @@
 # vraptor-taglib
 
+* SelectItems 
+
+	Declare:
+
+		<%@ taglib uri="http://vraptor.caelum.com.br/taglibs" prefix="vraptor" %>
+	
+	
+	Definition and Usage:
+		The <vraptor:selectItems> is used to create a drop-down list of HTML.
+	
+	Attributes: 
+		list: 
 
 * Validators support
 
