@@ -18,7 +18,7 @@ Declare:
 		* value: Specifies the value of <option> elements to be sent to a server. This value MUST be the atribute name of the list element.
 		* label: Specifies a shorter label for the <option> elements. This label MUST be the atribute name of the list element.
 
-	* Example:
+	Example:
 
 		<vraptor:selectItems name="user" list="${myUserList}" id="user" value="id" label="name" styleClass="cssClass" style="width: 330px;"/>
 
