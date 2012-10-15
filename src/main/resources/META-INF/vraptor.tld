@@ -1,30 +1,65 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 
 <taglib xmlns="http://java.sun.com/xml/ns/j2ee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee/web-jsptaglibrary_2_0.xsd"
-	version="2.0">
+        xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee/web-jsptaglibrary_2_0.xsd"
+        version="2.0">
 
 
-	<tlib-version>1.0</tlib-version>
-	<jsp-version>1.2</jsp-version>
-	<short-name>vraptor</short-name>
-	<description>Vraptor tags</description>
-	<uri>http://vraptor.caelum.com.br/taglibs</uri>
+    <tlib-version>1.0</tlib-version>
+    <jsp-version>1.2</jsp-version>
+    <short-name>vraptor</short-name>
+    <description>Vraptor tags</description>
+    <uri>http://vraptor.caelum.com.br/taglibs</uri>
 
-	<tag>
-		<name>showErrors</name>
-		<tag-class>br.com.caelum.vraptor.taglib.ShowErrorsTag</tag-class>
-		<attribute>
-			<name>category</name>
-		</attribute>
-	</tag>
+    <tag>
+        <name>showErrors</name>
+        <tag-class>br.com.caelum.vraptor.taglib.ShowErrorsTag</tag-class>
+        <attribute>
+            <name>category</name>
+        </attribute>
+    </tag>
 
-	<tag>
-		<name>hasErrors</name>
-		<tag-class>br.com.caelum.vraptor.taglib.HasErrorsTag</tag-class>
-		<attribute>
-			<name>category</name>
-		</attribute>
-	</tag>
+    <tag>
+        <name>hasErrors</name>
+        <tag-class>br.com.caelum.vraptor.taglib.HasErrorsTag</tag-class>
+        <attribute>
+            <name>category</name>
+        </attribute>
+    </tag>
+
+    <tag>
+        <name>selectItems</name>
+        <tag-class>br.com.caelum.vraptor.taglib.SelectItemsTag</tag-class>
+        <attribute>
+            <name>list</name>
+            <required>true</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+        <attribute>
+            <name>name</name>
+            <required>false</required>
+        </attribute>
+        <attribute>
+            <name>styleClass</name>
+        </attribute>
+        <attribute>
+            <name>value</name>
+            <required>true</required>
+        </attribute>
+        <attribute>
+            <name>label</name>
+            <required>true</required>
+        </attribute>
+        <attribute>
+            <name>style</name>
+            <required>false</required>
+        </attribute>
+        <attribute>
+            <name>id</name>
+            <required>false</required>
+        </attribute>
+    </tag>
+    
+    
 
 </taglib>
