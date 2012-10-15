@@ -18,13 +18,12 @@ Declare:
 		* value: Specifies the value of <option> elements to be sent to a server.
 		* label: Specifies a shorter label for the <option> elements.
 
+	* Example:
+
+		<vraptor:selectItems name="user" list="${myUserList}" id="user" value="id" label="name" styleClass="cssClass" style="width: 330px;"/>
+
 
 * Validators support
-
-	Declare:
-
-		<%@ taglib uri="http://vraptor.caelum.com.br/taglibs" prefix="vraptor" %>
-	
 	
 	If error exists:
 	
