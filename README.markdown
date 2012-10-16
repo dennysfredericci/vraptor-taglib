@@ -34,3 +34,11 @@ Declare:
 	Show errors:
 	
 		<vraptor:showErrors category="some.category" />
+
+
+
+
+# Contributors
+
+	Robson Ventura - @robsonvnt
+	Dennys Fredericci - @fredericci
